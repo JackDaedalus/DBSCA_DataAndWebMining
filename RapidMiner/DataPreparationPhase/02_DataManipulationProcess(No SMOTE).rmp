@@ -66,7 +66,7 @@
         <parameter key="local_random_seed" value="1992"/>
       </operator>
       <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes (2)" width="90" x="447" y="391">
-        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute_filter_type" value="all"/>
         <parameter key="attribute" value="Quality_Score"/>
         <parameter key="attributes" value=""/>
         <parameter key="use_except_expression" value="false"/>
@@ -76,7 +76,7 @@
         <parameter key="block_type" value="attribute_block"/>
         <parameter key="use_block_type_exception" value="false"/>
         <parameter key="except_block_type" value="value_matrix_row_start"/>
-        <parameter key="invert_selection" value="true"/>
+        <parameter key="invert_selection" value="false"/>
         <parameter key="include_special_attributes" value="false"/>
       </operator>
       <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set Role (2)" width="90" x="581" y="238">
