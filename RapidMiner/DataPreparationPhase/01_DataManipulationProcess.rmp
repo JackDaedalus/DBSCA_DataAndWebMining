@@ -56,7 +56,7 @@
         <parameter key="overwrite_attributes" value="true"/>
         <parameter key="new_attributes_postfix" value="_normalized"/>
       </operator>
-      <operator activated="true" class="split_data" compatibility="9.5.001" expanded="true" height="103" name="Split Data" width="90" x="246" y="289">
+      <operator activated="true" class="split_data" compatibility="9.5.001" expanded="true" height="103" name="Split Data" width="90" x="380" y="238">
         <enumeration key="partitions">
           <parameter key="ratio" value="0.7"/>
           <parameter key="ratio" value="0.3"/>
@@ -112,7 +112,7 @@
         <description align="center" color="transparent" colored="false" width="126">Store the Wine Quality Test Set for Model Evaluation</description>
       </operator>
       <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store" width="90" x="849" y="442">
-        <parameter key="repository_entry" value="../PrepPhaseData/winequality-trainingset"/>
+        <parameter key="repository_entry" value="../PrepPhaseData/winequality-trainingset-Upsampled"/>
         <description align="center" color="transparent" colored="false" width="126">Store The Wine Quality Training Data for use in Model Selection</description>
       </operator>
       <connect from_op="Retrieve winequality-red" from_port="output" to_op="Generate Attributes" to_port="example set input"/>
