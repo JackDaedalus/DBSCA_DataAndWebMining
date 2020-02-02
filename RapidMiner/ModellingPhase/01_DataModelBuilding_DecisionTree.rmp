@@ -24,7 +24,7 @@
         <parameter key="local_random_seed" value="1992"/>
         <parameter key="enable_parallel_execution" value="true"/>
         <process expanded="true">
-          <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling" width="90" x="45" y="34">
+          <operator activated="false" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling" width="90" x="45" y="289">
             <parameter key="number_of_neighbours" value="5"/>
             <parameter key="normalize" value="false"/>
             <parameter key="equalize_classes" value="false"/>
@@ -35,7 +35,7 @@
             <parameter key="use_local_random_seed" value="false"/>
             <parameter key="local_random_seed" value="1992"/>
           </operator>
-          <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling (2)" width="90" x="179" y="34">
+          <operator activated="false" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling (2)" width="90" x="179" y="289">
             <parameter key="number_of_neighbours" value="5"/>
             <parameter key="normalize" value="false"/>
             <parameter key="equalize_classes" value="false"/>
@@ -45,6 +45,15 @@
             <parameter key="nominal_change_rate" value="0.5"/>
             <parameter key="use_local_random_seed" value="false"/>
             <parameter key="local_random_seed" value="1992"/>
+          </operator>
+          <operator activated="true" class="productivity:execute_process" compatibility="9.5.001" expanded="true" height="68" name="Execute 04_DataOver_and_Undersampling" width="90" x="112" y="34">
+            <parameter key="process_location" value="../DataPreparationPhase/04_DataOver_and_Undersampling"/>
+            <parameter key="use_input" value="true"/>
+            <parameter key="store_output" value="false"/>
+            <parameter key="propagate_metadata_recursively" value="true"/>
+            <parameter key="cache_process" value="true"/>
+            <list key="macros"/>
+            <parameter key="fail_for_unknown_macros" value="true"/>
           </operator>
           <operator activated="true" class="concurrency:parallel_decision_tree" compatibility="9.5.001" expanded="true" height="103" name="Decision Tree" width="90" x="313" y="34">
             <parameter key="criterion" value="gain_ratio"/>
@@ -57,9 +66,8 @@
             <parameter key="minimal_size_for_split" value="4"/>
             <parameter key="number_of_prepruning_alternatives" value="3"/>
           </operator>
-          <connect from_port="training set" to_op="SMOTE Upsampling" to_port="exa"/>
-          <connect from_op="SMOTE Upsampling" from_port="ups" to_op="SMOTE Upsampling (2)" to_port="exa"/>
-          <connect from_op="SMOTE Upsampling (2)" from_port="ups" to_op="Decision Tree" to_port="training set"/>
+          <connect from_port="training set" to_op="Execute 04_DataOver_and_Undersampling" to_port="input 1"/>
+          <connect from_op="Execute 04_DataOver_and_Undersampling" from_port="result 1" to_op="Decision Tree" to_port="training set"/>
           <connect from_op="Decision Tree" from_port="model" to_port="model"/>
           <connect from_op="Decision Tree" from_port="exampleSet" to_port="through 1"/>
           <portSpacing port="source_training set" spacing="0"/>

@@ -45,7 +45,7 @@
         <parameter key="target_role" value="label"/>
         <list key="set_additional_roles"/>
       </operator>
-      <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store" width="90" x="782" y="34">
+      <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store" width="90" x="715" y="187">
         <parameter key="repository_entry" value="../ModellingData/winequality-original-dataset-QualityScoreLabel"/>
       </operator>
       <connect from_op="Retrieve winequality-red" from_port="output" to_op="Generate Attributes" to_port="example set input"/>
