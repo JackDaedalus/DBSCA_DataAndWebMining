@@ -65,20 +65,6 @@
         <parameter key="use_local_random_seed" value="true"/>
         <parameter key="local_random_seed" value="1992"/>
       </operator>
-      <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes (2)" width="90" x="246" y="391">
-        <parameter key="attribute_filter_type" value="single"/>
-        <parameter key="attribute" value="Quality_Score"/>
-        <parameter key="attributes" value=""/>
-        <parameter key="use_except_expression" value="false"/>
-        <parameter key="value_type" value="attribute_value"/>
-        <parameter key="use_value_type_exception" value="false"/>
-        <parameter key="except_value_type" value="time"/>
-        <parameter key="block_type" value="attribute_block"/>
-        <parameter key="use_block_type_exception" value="false"/>
-        <parameter key="except_block_type" value="value_matrix_row_start"/>
-        <parameter key="invert_selection" value="true"/>
-        <parameter key="include_special_attributes" value="false"/>
-      </operator>
       <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set Role (2)" width="90" x="246" y="238">
         <parameter key="attribute_name" value="Quality_Score"/>
         <parameter key="target_role" value="label"/>
@@ -86,9 +72,9 @@
       </operator>
       <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store (2)" width="90" x="380" y="493">
         <parameter key="repository_entry" value="../PrepPhaseData/winequality-testset"/>
-        <description align="center" color="transparent" colored="false" width="126">Store the Wine Quality Test Set for Model Evaluation</description>
+        <description align="center" color="transparent" colored="false" width="126">Store the Wine Quality Test Set for Data Prep Reporting</description>
       </operator>
-      <operator activated="true" breakpoints="after" class="subprocess" compatibility="9.5.001" expanded="true" height="82" name="Unbalance" width="90" x="380" y="238">
+      <operator activated="true" class="subprocess" compatibility="9.5.001" expanded="true" height="82" name="Unbalance" width="90" x="380" y="238">
         <process expanded="true">
           <operator activated="true" class="multiply" compatibility="9.5.001" expanded="true" height="103" name="Multiply" width="90" x="45" y="187"/>
           <operator activated="true" class="filter_examples" compatibility="9.5.001" expanded="true" height="103" name="Filter Examples (2)" width="90" x="246" y="289">
@@ -149,7 +135,7 @@
           <portSpacing port="sink_out 2" spacing="0"/>
         </process>
       </operator>
-      <operator activated="true" breakpoints="after" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling" width="90" x="514" y="238">
+      <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling" width="90" x="514" y="238">
         <parameter key="number_of_neighbours" value="5"/>
         <parameter key="normalize" value="false"/>
         <parameter key="equalize_classes" value="true"/>
@@ -161,7 +147,7 @@
         <parameter key="use_local_random_seed" value="false"/>
         <parameter key="local_random_seed" value="1992"/>
       </operator>
-      <operator activated="true" breakpoints="after" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling (2)" width="90" x="648" y="238">
+      <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling (2)" width="90" x="648" y="238">
         <parameter key="number_of_neighbours" value="5"/>
         <parameter key="normalize" value="false"/>
         <parameter key="equalize_classes" value="true"/>
@@ -182,8 +168,7 @@
       <connect from_op="Select Attributes" from_port="example set output" to_op="Normalize (Series) (2)" to_port="example set"/>
       <connect from_op="Normalize (Series) (2)" from_port="example set" to_op="Split Data" to_port="example set"/>
       <connect from_op="Split Data" from_port="partition 1" to_op="Set Role (2)" to_port="example set input"/>
-      <connect from_op="Split Data" from_port="partition 2" to_op="Select Attributes (2)" to_port="example set input"/>
-      <connect from_op="Select Attributes (2)" from_port="example set output" to_op="Store (2)" to_port="input"/>
+      <connect from_op="Split Data" from_port="partition 2" to_op="Store (2)" to_port="input"/>
       <connect from_op="Set Role (2)" from_port="example set output" to_op="Unbalance" to_port="in 1"/>
       <connect from_op="Unbalance" from_port="out 1" to_op="SMOTE Upsampling" to_port="exa"/>
       <connect from_op="SMOTE Upsampling" from_port="ups" to_op="SMOTE Upsampling (2)" to_port="exa"/>

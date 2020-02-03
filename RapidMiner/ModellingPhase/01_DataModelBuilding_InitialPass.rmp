@@ -12,7 +12,7 @@
     <parameter key="process_duration_for_mail" value="30"/>
     <parameter key="encoding" value="SYSTEM"/>
     <process expanded="true">
-      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Retrieve winequality-trainingset-NOT-Upsampled-ForModel" width="90" x="179" y="34">
+      <operator activated="true" breakpoints="after" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Retrieve winequality-trainingset-NOT-Upsampled-ForModel" width="90" x="179" y="34">
         <parameter key="repository_entry" value="//CARepository/ModellingData/winequality-trainingset-NOT-Upsampled-ForModel"/>
       </operator>
       <operator activated="true" class="concurrency:cross_validation" compatibility="9.5.001" expanded="true" height="145" name="Cross Validation" width="90" x="380" y="85">
