@@ -23,7 +23,7 @@
         <parameter key="data_management" value="auto"/>
         <parameter key="merge_type" value="all"/>
       </operator>
-      <operator activated="true" breakpoints="after" class="generate_attributes" compatibility="9.5.001" expanded="true" height="82" name="Generate Attributes" width="90" x="179" y="34">
+      <operator activated="true" class="generate_attributes" compatibility="9.5.001" expanded="true" height="82" name="Generate Attributes" width="90" x="179" y="34">
         <list key="function_descriptions">
           <parameter key="Quality_Score" value="if([quality]&lt;5, &quot;Poor Quality&quot;,if([quality]&gt;=5 &amp;&amp; [quality]&lt;7,&quot;Medium Quality&quot;,if([quality]&gt;=7,&quot;High Quality&quot;,&quot;Uncategorised&quot;)))"/>
         </list>

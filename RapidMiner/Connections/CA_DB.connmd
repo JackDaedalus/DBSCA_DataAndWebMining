@@ -1,0 +1,91 @@
+{
+  "name" : "CA_DB",
+  "type" : "jdbc_connectors:jdbc",
+  "description" : "",
+  "tags" : [ ],
+  "id" : "08f44786-b858-4f20-8f21-0b34bb27a2cc",
+  "valueProviders" : [ ],
+  "keys" : [ {
+    "group" : "jdbc_driver",
+    "parameters" : [ {
+      "name" : "urlprefix",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "jdbc:",
+      "injectorName" : null
+    }, {
+      "name" : "dbseparator",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "/",
+      "injectorName" : null
+    }, {
+      "name" : "driver_class",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : null,
+      "injectorName" : null
+    } ]
+  }, {
+    "group" : "db_config",
+    "parameters" : [ {
+      "name" : "host",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "localhost",
+      "injectorName" : null
+    }, {
+      "name" : "port",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : null,
+      "injectorName" : null
+    }, {
+      "name" : "database",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : null,
+      "injectorName" : null
+    }, {
+      "name" : "URL",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "%{jdbc_driver.urlprefix}%{host}:%{port}%{jdbc_driver.dbseparator}%{database}",
+      "injectorName" : null
+    }, {
+      "name" : "manual_url",
+      "encrypted" : false,
+      "enabled" : false,
+      "value" : null,
+      "injectorName" : null
+    } ]
+  }, {
+    "group" : "credentials",
+    "parameters" : [ {
+      "name" : "user",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : null,
+      "injectorName" : null
+    }, {
+      "name" : "password",
+      "encrypted" : true,
+      "enabled" : true,
+      "value" : null,
+      "injectorName" : null
+    } ]
+  }, {
+    "group" : "jdbc_advanced",
+    "parameters" : [ {
+      "name" : "autocommit",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "true",
+      "injectorName" : null
+    } ]
+  }, {
+    "group" : "jdbc_properties",
+    "parameters" : [ ]
+  } ],
+  "placeholders" : [ ]
+}
