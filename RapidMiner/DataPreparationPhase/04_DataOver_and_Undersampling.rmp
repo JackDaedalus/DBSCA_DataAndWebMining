@@ -50,12 +50,12 @@
             <parameter key="local_random_seed" value="1992"/>
             <description align="center" color="transparent" colored="false" width="126">Create and undersample of 'Medium Quality' rows</description>
           </operator>
-          <operator activated="true" class="append" compatibility="9.5.001" expanded="true" height="103" name="Append" width="90" x="581" y="187">
+          <operator activated="true" class="append" compatibility="9.5.001" expanded="true" height="103" name="Append" width="90" x="514" y="289">
             <parameter key="datamanagement" value="double_array"/>
             <parameter key="data_management" value="auto"/>
             <parameter key="merge_type" value="all"/>
           </operator>
-          <operator activated="true" class="shuffle" compatibility="9.5.001" expanded="true" height="82" name="Shuffle" width="90" x="715" y="187">
+          <operator activated="true" class="shuffle" compatibility="9.5.001" expanded="true" height="82" name="Shuffle" width="90" x="715" y="289">
             <parameter key="use_local_random_seed" value="true"/>
             <parameter key="local_random_seed" value="1992"/>
           </operator>
@@ -73,7 +73,7 @@
           <portSpacing port="sink_out 2" spacing="0"/>
         </process>
       </operator>
-      <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling" width="90" x="380" y="34">
+      <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling" width="90" x="581" y="34">
         <parameter key="number_of_neighbours" value="5"/>
         <parameter key="normalize" value="false"/>
         <parameter key="equalize_classes" value="false"/>
@@ -85,7 +85,7 @@
         <parameter key="use_local_random_seed" value="false"/>
         <parameter key="local_random_seed" value="1992"/>
       </operator>
-      <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling (2)" width="90" x="514" y="34">
+      <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling (2)" width="90" x="782" y="34">
         <parameter key="number_of_neighbours" value="5"/>
         <parameter key="normalize" value="false"/>
         <parameter key="equalize_classes" value="false"/>

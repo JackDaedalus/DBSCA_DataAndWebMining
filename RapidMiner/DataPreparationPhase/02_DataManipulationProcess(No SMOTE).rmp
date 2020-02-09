@@ -22,11 +22,11 @@
         <parameter key="keep_all" value="true"/>
         <description align="center" color="transparent" colored="false" width="126">Create a new 'Quality_Score' attribute</description>
       </operator>
-      <operator activated="true" class="shuffle" compatibility="9.5.001" expanded="true" height="82" name="Shuffle (2)" width="90" x="313" y="34">
+      <operator activated="true" class="shuffle" compatibility="9.5.001" expanded="true" height="82" name="Shuffle (2)" width="90" x="447" y="34">
         <parameter key="use_local_random_seed" value="true"/>
         <parameter key="local_random_seed" value="1992"/>
       </operator>
-      <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes" width="90" x="447" y="34">
+      <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes" width="90" x="715" y="34">
         <parameter key="attribute_filter_type" value="subset"/>
         <parameter key="attribute" value=""/>
         <parameter key="attributes" value="|volatile acidity|Quality_Score|sulphates|total sulfur dioxide|alcohol"/>
@@ -40,7 +40,7 @@
         <parameter key="invert_selection" value="false"/>
         <parameter key="include_special_attributes" value="false"/>
       </operator>
-      <operator activated="true" class="time_series:normalization" compatibility="9.5.000" expanded="true" height="68" name="Normalize (Series) (2)" width="90" x="581" y="34">
+      <operator activated="true" class="time_series:normalization" compatibility="9.5.000" expanded="true" height="68" name="Normalize (Series) (2)" width="90" x="849" y="34">
         <parameter key="attribute_filter_type" value="all"/>
         <parameter key="attribute" value=""/>
         <parameter key="attributes" value=""/>
@@ -56,7 +56,7 @@
         <parameter key="overwrite_attributes" value="true"/>
         <parameter key="new_attributes_postfix" value="_normalized"/>
       </operator>
-      <operator activated="true" class="split_data" compatibility="9.5.001" expanded="true" height="103" name="Split Data" width="90" x="246" y="238">
+      <operator activated="true" class="split_data" compatibility="9.5.001" expanded="true" height="103" name="Split Data" width="90" x="179" y="544">
         <enumeration key="partitions">
           <parameter key="ratio" value="0.7"/>
           <parameter key="ratio" value="0.3"/>
@@ -66,17 +66,17 @@
         <parameter key="local_random_seed" value="1992"/>
         <description align="center" color="transparent" colored="false" width="126">Stratified Split of Data into Training and Test sets</description>
       </operator>
-      <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set Role (2)" width="90" x="514" y="238">
+      <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set Role (2)" width="90" x="581" y="442">
         <parameter key="attribute_name" value="Quality_Score"/>
         <parameter key="target_role" value="label"/>
         <list key="set_additional_roles"/>
         <description align="center" color="transparent" colored="false" width="126">Set Label in Training Set</description>
       </operator>
-      <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store (2)" width="90" x="447" y="391">
+      <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store (2)" width="90" x="514" y="595">
         <parameter key="repository_entry" value="../ModellingData/winequality-testset-ForModel"/>
         <description align="center" color="transparent" colored="false" width="126">Store the Wine Quality Test Set for Model Evaluation</description>
       </operator>
-      <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store" width="90" x="648" y="238">
+      <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store" width="90" x="715" y="442">
         <parameter key="repository_entry" value="../ModellingData/winequality-trainingset-NOT-Upsampled-ForModel"/>
         <description align="center" color="transparent" colored="false" width="126">Store The Wine Quality Training Data for use in Model Selection</description>
       </operator>

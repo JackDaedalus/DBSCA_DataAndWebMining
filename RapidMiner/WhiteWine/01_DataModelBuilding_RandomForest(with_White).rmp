@@ -56,7 +56,7 @@
             <parameter key="fail_for_unknown_macros" value="true"/>
           </operator>
           <operator activated="true" class="bagging" compatibility="9.5.001" expanded="true" height="82" name="Bagging" width="90" x="313" y="187">
-            <parameter key="sample_ratio" value="0.9"/>
+            <parameter key="sample_ratio" value="0.6"/>
             <parameter key="iterations" value="10"/>
             <parameter key="average_confidences" value="true"/>
             <parameter key="use_local_random_seed" value="false"/>

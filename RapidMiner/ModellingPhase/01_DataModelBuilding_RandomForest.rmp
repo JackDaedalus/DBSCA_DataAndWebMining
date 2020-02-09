@@ -101,7 +101,7 @@
             <list key="application_parameters"/>
             <parameter key="create_view" value="false"/>
           </operator>
-          <operator activated="true" breakpoints="after" class="performance" compatibility="9.5.001" expanded="true" height="82" name="Performance" width="90" x="179" y="34">
+          <operator activated="true" class="performance" compatibility="9.5.001" expanded="true" height="82" name="Performance" width="90" x="179" y="34">
             <parameter key="use_example_weights" value="true"/>
           </operator>
           <connect from_port="model" to_op="Apply Model" to_port="model"/>
@@ -118,32 +118,48 @@
           <portSpacing port="sink_performance 2" spacing="0"/>
         </process>
       </operator>
-      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Retrieve winequality-testset-ForModel" width="90" x="112" y="340">
+      <operator activated="true" class="multiply" compatibility="9.5.001" expanded="true" height="103" name="Multiply" width="90" x="514" y="340"/>
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Retrieve winequality-testset-ForModel" width="90" x="45" y="646">
         <parameter key="repository_entry" value="../ModellingData/winequality-testset-ForModel"/>
       </operator>
-      <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set Role" width="90" x="380" y="289">
+      <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set Role" width="90" x="313" y="595">
         <parameter key="attribute_name" value="Quality_Score"/>
         <parameter key="target_role" value="label"/>
         <list key="set_additional_roles"/>
       </operator>
-      <operator activated="true" class="apply_model" compatibility="9.5.001" expanded="true" height="82" name="Apply Model (2)" width="90" x="581" y="187">
+      <operator activated="true" class="apply_model" compatibility="9.5.001" expanded="true" height="82" name="Apply Model (2)" width="90" x="648" y="595">
         <list key="application_parameters"/>
         <parameter key="create_view" value="false"/>
       </operator>
-      <operator activated="true" class="performance" compatibility="9.5.001" expanded="true" height="82" name="Performance (2)" width="90" x="715" y="34">
+      <operator activated="true" class="performance" compatibility="9.5.001" expanded="true" height="82" name="Performance (2)" width="90" x="849" y="595">
+        <parameter key="use_example_weights" value="true"/>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="9.5.001" expanded="true" height="82" name="Apply Model (3)" width="90" x="648" y="85">
+        <list key="application_parameters"/>
+        <parameter key="create_view" value="false"/>
+      </operator>
+      <operator activated="true" class="performance" compatibility="9.5.001" expanded="true" height="82" name="Performance (3)" width="90" x="782" y="85">
         <parameter key="use_example_weights" value="true"/>
       </operator>
       <connect from_op="Retrieve winequality-trainingset-NOT-Upsampled-ForModel" from_port="output" to_op="Cross Validation" to_port="example set"/>
-      <connect from_op="Cross Validation" from_port="model" to_op="Apply Model (2)" to_port="model"/>
+      <connect from_op="Cross Validation" from_port="model" to_op="Multiply" to_port="input"/>
+      <connect from_op="Cross Validation" from_port="example set" to_op="Apply Model (3)" to_port="unlabelled data"/>
+      <connect from_op="Multiply" from_port="output 1" to_op="Apply Model (3)" to_port="model"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Apply Model (2)" to_port="model"/>
       <connect from_op="Retrieve winequality-testset-ForModel" from_port="output" to_op="Set Role" to_port="example set input"/>
       <connect from_op="Set Role" from_port="example set output" to_op="Apply Model (2)" to_port="unlabelled data"/>
       <connect from_op="Apply Model (2)" from_port="labelled data" to_op="Performance (2)" to_port="labelled data"/>
       <connect from_op="Performance (2)" from_port="performance" to_port="result 1"/>
       <connect from_op="Performance (2)" from_port="example set" to_port="result 2"/>
+      <connect from_op="Apply Model (3)" from_port="labelled data" to_op="Performance (3)" to_port="labelled data"/>
+      <connect from_op="Performance (3)" from_port="performance" to_port="result 3"/>
+      <connect from_op="Performance (3)" from_port="example set" to_port="result 4"/>
       <portSpacing port="source_input 1" spacing="0"/>
       <portSpacing port="sink_result 1" spacing="0"/>
       <portSpacing port="sink_result 2" spacing="0"/>
       <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+      <portSpacing port="sink_result 5" spacing="0"/>
     </process>
   </operator>
 </process>

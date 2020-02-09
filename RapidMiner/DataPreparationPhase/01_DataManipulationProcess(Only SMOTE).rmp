@@ -82,7 +82,7 @@
         <parameter key="use_local_random_seed" value="false"/>
         <parameter key="local_random_seed" value="1992"/>
       </operator>
-      <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling (2)" width="90" x="514" y="238">
+      <operator activated="true" class="operator_toolbox:smote" compatibility="2.3.000" expanded="true" height="82" name="SMOTE Upsampling (2)" width="90" x="849" y="136">
         <parameter key="number_of_neighbours" value="10"/>
         <parameter key="normalize" value="false"/>
         <parameter key="equalize_classes" value="false"/>
@@ -97,7 +97,7 @@
         <parameter key="repository_entry" value="../PrepPhaseData/winequality-testset"/>
         <description align="center" color="transparent" colored="false" width="126">Store the Wine Quality Test Set for Data Prep Reporting&lt;br/&gt;</description>
       </operator>
-      <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store" width="90" x="648" y="238">
+      <operator activated="true" class="store" compatibility="9.5.001" expanded="true" height="68" name="Store" width="90" x="648" y="493">
         <parameter key="repository_entry" value="../PrepPhaseData/winequality-trainingset-Upsampled"/>
         <description align="center" color="transparent" colored="false" width="126">Store The Wine Quality Training Data for use in Data Prep&lt;br/&gt; Reporting</description>
       </operator>
